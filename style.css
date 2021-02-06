@@ -1,0 +1,13 @@
+body{
+    background-image: url('1.jpg');
+    background-size: cover;
+    
+}
+.box{
+margin-top: 90px;
+background-color: aliceblue;
+height: 600px;
+border-radius: 20px;
+padding: 10px 10px 10px 10px;
+}
+
