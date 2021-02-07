@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,37 +19,27 @@
 </head>
 <body>
 <header>
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#141e45 ;">
-  <a class="navbar-brand text-white" href="#">Bloggermade</a>
-  <button class="navbar-toggler text-white"" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon text-white""></span>
-  </button>
-  <div class="collapse navbar-collapse text-white"" id="navbarNav">
-    <ul class="navbar-nav m-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-white ml-4" href="#"><i class="fas fa-home" style="font-size:30px"></i>HOME<span class="sr-only"></span></a>
+
+<ul class="nav flex-column" style="background-color:#141e45 ;">
+<a class="navbar-brand text-white" href="#">Bloggermade</a>
+<li class="nav-item active">
+        <a class="nav-link text-white ml-4" href="#"><i class="fas fa-home" style="font-size:30px"></i> <span style="margin-left:10px "><b>ACCEUIL</b></span></a>
+</li>
+ 
+  <li class="nav-item">
+        <a class="nav-link text-white ml-4"  href="#"><i class="fas fa-clipboard"style="font-size:30px"></i>  <span style="margin-left:20px"><B>POST</B></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white ml-4"  href="#"><i class="fas fa-clipboard"style="font-size:30px"></i>POST</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white ml-4" href="#"><i class="fas fa-bell" style="font-size:30px"></i> <sup class="text-danger" style="font-weight:bolder;font-size:20px">4</sup>NOTIFICATION</a>
+        <a class="nav-link text-white ml-4" href="#"><i class="fas fa-bell" style="font-size:30px"></i> <sup class="text-danger" style="font-weight:bolder;font-size:20px">4</sup>  <B>NOTIFICATION</B></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link text-white ml-4"  href="#"><i class="fas fa-user" style="font-size:30px"></i></a>
+        <a class="nav-link text-white ml-4"  href="#"><i class="fas fa-user" style="font-size:30px"> </i> <span style="margin-left:20px"> <B>PROFILE</B></span></a>
       
       </li>
-      <li class="nav-item">
-      
-      <a class="nav-link text-white ml-4"  >
       <form action="logout.inc.php" method="post">
-        <button name="logout">
-        <i class="fas fa-sign-out-alt"style="font-size:30px" type="submit" name="logout">
-</button>
-      </i></form></a>
-      </li>
-
-    </ul>
-  </div>
-</nav>
+        <input type="submit" name='logout' value="deconnection" class="btn btn-danger" >
+      
+      </form>
+</ul>
 </header>
+<!-- <i class="fas fa-sign-out-alt"style="font-size:30px" type="submit" name="logout"> -->

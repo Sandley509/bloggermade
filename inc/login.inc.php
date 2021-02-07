@@ -1,5 +1,5 @@
 <?php 
-
+   session_start();
 include('db.php');
 if (isset($_POST['submit'])) {
 
@@ -8,19 +8,19 @@ if (isset($_POST['submit'])) {
       // error handlers
     // letsh check for empty field
     if( empty($psw)){
-          $pseudo=mysqli_real_escape_string($pdo,$_POST['pseudo']);
+        header("Location: ../index.php?=Empty_field");
         exit();
 
     }else{
            // check if email is valid
            if(empty($pseudo)){
-            header("Location: ../inc/index.php?=Empty_field");
+            header("Location: ../index.php?=invalid_pseudo");
         exit();
            }
            else{
 
             
-               $sql="SELECT * FROM users WHERE pseudo='$pseudo' ";
+               $sql="SELECT * FROM users WHERE pseudo='$pseudo'";
                $result=mysqli_query($pdo,$sql);
                $resultCheck=mysqli_num_rows($result);
                if ($resultCheck < 1) {
@@ -34,28 +34,18 @@ if (isset($_POST['submit'])) {
                             header("Location: ../index.php?=wrong password");
                             exit();
                         }elseif($hashedpasswordCheck==true){
-                            session_regenerate_id();
-                            $_SESSION['loggedin'] = TRUE;
+                         session_start();
+                            $_SESSION['loggedin']=true;
                             $_SESSION['u_id']=$row['ID'];
                             $_SESSION['pseudo']=$row['pseudo'];
-                        
-                        
-                            // Verify if the user is an administrator
-                            $sql="SELECT * FROM users WHERE level='1' ";
-                            $result=mysqli_query($pdo,$sql);
-                            $resultCheck=mysqli_num_rows($result);
-                            if ($resultCheck < 1) {
-                                header("Location: ../inc/index.php?=Connection_success");
-                         
-                            }
-                        
-                                
-                         
+                             header("Location: ../inc/index.php?=Connection_success");
 
-                       
-                           
+                            
 
-                            exit();
+
+
+
+
 
 
 
@@ -66,7 +56,7 @@ if (isset($_POST['submit'])) {
            }
     }
 }else{
-    header("Location: ../login.php=empty");
+    header("Location: ../index.php?=empty");
     exit();
 }
 
